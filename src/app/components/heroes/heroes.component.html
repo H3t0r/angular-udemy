@@ -2,13 +2,15 @@
   <h1>The Heroes</h1>
   <hr>
   <div class="card-columns">
-    <div class="card">
-      <img class="card-img-top img-fluid" src="assets/img/aquaman.png" alt="">
+    <div class="card" *ngFor="let hero of heroes; let i = index">
+      <img class="card-img-top img-fluid" [src]="hero.img" [alt]="hero.nombre">
       <div class="card-body">
-        <h4 class="card-title">Title</h4>
-        <p class="card-text">Text</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 min ago...</small></p>
-        <button type="button" class="btn btn-outline-primary btn-block">More info...</button>
+        <h4 class="card-title">{{ hero.nombre }}</h4>
+        <p class="card-text">{{ hero.bio }}</p>
+        <p class="card-text"><small class="text-muted">{{ hero.aparicion }} </small></p>
+        <button (click)="goToHero(i)" type="button" class="btn btn-outline-primary btn-block">More info...</button>
+        <!-- Route - hardcoded way -->
+        <!-- <a [routerLink]="['/hero', i]" class="btn btn-outline-primary btn-block">More info...</a> -->
       </div>
     </div>
   </div>
