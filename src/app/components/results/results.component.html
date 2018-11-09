@@ -1,0 +1,25 @@
+<div class="animated fadeIn">
+  <h1>
+    Searching for: <small>{{ query }}</small>
+  </h1>
+  <hr />
+  <div class="card-columns">
+    <div class="card" *ngFor="let hero of heroes; let i = index">
+      <img class="card-img-top img-fluid" [src]="hero.img" [alt]="hero.nombre" />
+      <div class="card-body">
+        <h4 class="card-title">{{ hero.nombre }}</h4>
+        <p class="card-text">{{ hero.bio }}</p>
+        <p class="card-text">
+          <small class="text-muted">{{ hero.aparicion }} </small>
+        </p>
+        <button (click)="goToHero(i)" type="button" class="btn btn-outline-primary btn-block">
+          More info...
+        </button>
+        <!-- Route - hardcoded way -->
+        <!--
+          <a [routerLink]="['/hero', i]" class="btn btn-outline-primary btn-block">More info...</a>
+        -->
+      </div>
+    </div>
+  </div>
+</div>

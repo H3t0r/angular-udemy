@@ -1,5 +1,5 @@
 <h1>
-  {{ hero.nombre }}<small>{{ hero.aparicion }}</small>
+  {{ hero.nombre | uppercase }}<small> ({{ hero.aparicion | date: 'y' }})</small>
 </h1>
 <hr />
 <div class="row">
