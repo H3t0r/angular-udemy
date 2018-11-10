@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HeroesService } from '../../services/heroes.service';
+import { HeroesService, Hero } from '../../services/heroes.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./results.component.css'],
 })
 export class ResultsComponent implements OnInit {
-  heroes: any[] = [];
+  heroes: Hero[] = [];
   query: string;
 
   constructor(private activatedRoute: ActivatedRoute, private heroesService: HeroesService) {}

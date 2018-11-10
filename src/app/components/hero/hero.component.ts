@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HeroesService } from '../../services/heroes.service';
+import { HeroesService, Hero } from '../../services/heroes.service';
 
 @Component({
   selector: 'app-hero',
@@ -8,7 +8,7 @@ import { HeroesService } from '../../services/heroes.service';
   styleUrls: ['./hero.component.css'],
 })
 export class HeroComponent {
-  hero: any = {};
+  hero: Hero;
 
   constructor(private activatedRoute: ActivatedRoute, private heroesService: HeroesService) {
     this.activatedRoute.params.subscribe(params => {
