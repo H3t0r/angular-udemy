@@ -77,9 +77,12 @@ export class HeroesService {
     const heroesMatched: Hero[] = [];
     query = query.toLowerCase();
 
-    for (const hero of this.heroes) {
+    for (let i = 0; i < this.heroes.length; i++) {
+      const hero = this.heroes[i];
       const name = hero.nombre.toLowerCase();
+
       if (name.includes(query)) {
+        hero.id = i;
         heroesMatched.push(hero);
       }
     }
@@ -94,4 +97,5 @@ export interface Hero {
   img: string;
   aparicion: string;
   casa: string;
+  id?: number;
 }

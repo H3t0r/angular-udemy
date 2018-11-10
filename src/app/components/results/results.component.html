@@ -12,7 +12,7 @@
     <app-hero-card
       *ngFor="let hero of heroes; let i = index"
       [hero]="hero"
-      [index]="i"
+      [index]="hero.id"
     ></app-hero-card>
   </div>
 </div>
