@@ -17,7 +17,6 @@ export class ResultsComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       this.query = params['query'];
       this.heroes = this.heroesService.findHero(this.query);
-      console.log(this.heroes);
     });
   }
 }

@@ -61,9 +61,7 @@ export class HeroesService {
     },
   ];
 
-  constructor() {
-    console.log('Service ready...');
-  }
+  constructor() {}
 
   getHeroes(): Hero[] {
     return this.heroes;

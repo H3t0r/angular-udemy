@@ -15,7 +15,6 @@ export class HeroCardComponent implements OnInit {
   ngOnInit() {}
 
   goToHero() {
-    console.log(this.index);
     this.router.navigate(['/hero', this.index]);
   }
 }
