@@ -1,20 +1,136 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container mt-3">
+  <h1>Pipes</h1>
+  <hr />
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Variable</th>
+        <th scope="col">Pipe</th>
+        <th scope="col">Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ name }}</td>
+        <td>uppercase</td>
+        <td>{{ name | uppercase }}</td>
+      </tr>
+      <tr>
+        <td>{{ name }}</td>
+        <td>lowercase</td>
+        <td>{{ name | lowercase }}</td>
+      </tr>
+      <tr>
+        <td>{{ name }}</td>
+        <td>slice:3</td>
+        <td>{{ name | slice: 3 }}</td>
+      </tr>
+      <tr>
+        <td>{{ name }}</td>
+        <td>slice:0:3</td>
+        <td>{{ name | slice: 0:3 }}</td>
+      </tr>
+      <tr>
+        <td>[{{ array }}]</td>
+        <td>slice:1:4</td>
+        <td>{{ array | slice: 1:4 }}</td>
+      </tr>
+      <tr>
+        <td>{{ PI }}</td>
+        <td>number: '3.0-0'</td>
+        <td>{{ PI | number: '3.0-0' }}</td>
+      </tr>
+      <tr>
+        <td>{{ PI }}</td>
+        <td>number: '1.0-2'</td>
+        <td>{{ PI | number: '1.0-2' }}</td>
+      </tr>
+      <tr>
+        <td>{{ x }}</td>
+        <td>percent</td>
+        <td>{{ x | percent }}</td>
+      </tr>
+      <tr>
+        <td>{{ x }}</td>
+        <td>percent: '2.2-2'</td>
+        <td>{{ x | percent: '2.2-2' }}</td>
+      </tr>
+      <tr>
+        <td>{{ salary }}</td>
+        <td>currency</td>
+        <td>{{ salary | currency }}</td>
+      </tr>
+      <tr>
+        <td>{{ salary }}</td>
+        <td>currency: 'EUR'</td>
+        <td>{{ salary | currency: 'EUR' }}</td>
+      </tr>
+      <tr>
+        <td>{{ salary }}</td>
+        <td>currency: 'EUR': 'code'</td>
+        <td>{{ salary | currency: 'EUR':'code' }}</td>
+      </tr>
+      <tr>
+        <td>{{ salary }}</td>
+        <td>currency: 'MXN': 'symbol-narrow': '4.3-3'</td>
+        <td>{{ salary | currency: 'MXN':'symbol-narrow':'4.3-3' }}</td>
+      </tr>
+      <tr>
+        <td>Promise value</td>
+        <td>async</td>
+        <td>{{ promise | async }}</td>
+      </tr>
+      <tr>
+        <td>{{ date }}</td>
+        <td>date</td>
+        <td>{{ date | date }}</td>
+      </tr>
+      <tr>
+        <td>{{ date }}</td>
+        <td>date: 'medium'</td>
+        <td>{{ date | date: 'medium' }}</td>
+      </tr>
+      <tr>
+        <td>{{ date }}</td>
+        <td>date: 'MMMM - dd'</td>
+        <td>{{ date | date: 'MMMM - dd' }}</td>
+      </tr>
+      <tr>
+        <td>{{ fullName }}</td>
+        <td>capitalize</td>
+        <td>{{ fullName | capitalize }}</td>
+      </tr>
+      <tr>
+        <td>{{ secret }}</td>
+        <td>
+          password: {{ active }}
+          <button type="button" class="btn btn-outline-primary" (click)="active = !active">
+            Enable/Disable
+          </button>
+        </td>
+        <td>{{ secret | password: active }}</td>
+      </tr>
+    </tbody>
+  </table>
 
+  <h3>JSON</h3>
+  <pre>
+    {{ hero | json }}
+  </pre>
+
+  <h3>Slice</h3>
+  <ul>
+    <li *ngFor="let n of (array | slice: 5:20)">{{ n }}</li>
+  </ul>
+
+  <h3>Youtube</h3>
+
+  <iframe
+    width="560"
+    height="315"
+    [src]="video | safeDom: 'https://www.youtube.com/embed/'"
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>
