@@ -14,6 +14,6 @@ export class SpotifyService {
         'Bearer BQDRYZqDTSefGk3K4BrBwtJZD-W0bn3prwsuDEG-vZB7Xvcfu0lC0mBvsUhnbSW1PnfW865dFHukan3WHS4',
     });
 
-    this.http.get(url, { headers }).subscribe(data => console.log(data));
+    return this.http.get(url, { headers });
   }
 }
