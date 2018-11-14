@@ -12,9 +12,10 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
 // Routes
 import { ROUTES } from './app.routes';
+import { NoImagePipe } from './pipes/no-image.pipe';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, SearchComponent, ArtistComponent, NavbarComponent],
+  declarations: [AppComponent, HomeComponent, SearchComponent, ArtistComponent, NavbarComponent, NoImagePipe],
   imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(ROUTES)],
   providers: [],
   bootstrap: [AppComponent],
