@@ -1,4 +1,4 @@
-<div class="card animated fadeIn" *ngFor="let item of items">
+<div class="card animated fadeIn puntero" *ngFor="let item of items" (click)="goToArtist(item)">
   <img class="card-img-top" [src]="item.images | noImage" [alt]="item.name" />
   <div class="card-body">
     <h4 class="card-title">{{ item.name }}</h4>
