@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row animated fadeIn">
   <div class="col">
     <input
       type="search"
@@ -12,6 +12,7 @@
 </div>
 <div class="row mt-5">
   <div class="col">
-    <div class="card-columns"><app-card [items]="artists"></app-card></div>
+    <app-loading *ngIf="isLoading"></app-loading>
+    <div class="card-columns"><app-card *ngIf="!isLoading" [items]="artists"></app-card></div>
   </div>
 </div>

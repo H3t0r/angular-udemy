@@ -1,1 +1,2 @@
-<div class="card-columns"><app-card [items]="newReleases"></app-card></div>
+<app-loading *ngIf="isLoading"></app-loading>
+<div class="card-columns"><app-card *ngIf="!isLoading" [items]="newReleases"></app-card></div>
