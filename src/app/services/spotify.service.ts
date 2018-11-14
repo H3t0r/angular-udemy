@@ -11,7 +11,17 @@ export class SpotifyService {
     const url = 'https://api.spotify.com/v1/browse/new-releases';
     const headers = new HttpHeaders({
       Authorization:
-        'Bearer BQDRYZqDTSefGk3K4BrBwtJZD-W0bn3prwsuDEG-vZB7Xvcfu0lC0mBvsUhnbSW1PnfW865dFHukan3WHS4',
+        'Bearer BQDsSYtMf-zogqytFlwVtJQJj7zTeuHjIm_4HvM5oQBUuaOFJUrW_IscaTC5ote8Ky7P-yNNTbDD7m87FDw',
+    });
+
+    return this.http.get(url, { headers });
+  }
+
+  searchByArtist(query: string) {
+    const url = `https://api.spotify.com/v1/search?type=artist&q=${query}`;
+    const headers = new HttpHeaders({
+      Authorization:
+        'Bearer BQDsSYtMf-zogqytFlwVtJQJj7zTeuHjIm_4HvM5oQBUuaOFJUrW_IscaTC5ote8Ky7P-yNNTbDD7m87FDw',
     });
 
     return this.http.get(url, { headers });
