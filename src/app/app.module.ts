@@ -9,13 +9,24 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { CardComponent } from './components/shared/card/card.component';
 
 // Routes
 import { ROUTES } from './app.routes';
+
+// Pipes
 import { NoImagePipe } from './pipes/no-image.pipe';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, SearchComponent, ArtistComponent, NavbarComponent, NoImagePipe],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    SearchComponent,
+    ArtistComponent,
+    NavbarComponent,
+    NoImagePipe,
+    CardComponent,
+  ],
   imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(ROUTES)],
   providers: [],
   bootstrap: [AppComponent],
