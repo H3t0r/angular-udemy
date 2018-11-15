@@ -10,6 +10,7 @@ import { SpotifyService } from 'src/app/services/spotify.service';
 export class ArtistComponent {
   artist: any = {};
   tracks: any[] = [];
+  spotifyPlayer = 'https://open.spotify.com/embed/track/';
   isLoading: boolean;
 
   constructor(private route: ActivatedRoute, private spotifyService: SpotifyService) {

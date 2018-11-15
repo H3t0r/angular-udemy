@@ -17,6 +17,7 @@ import { ROUTES } from './app.routes';
 
 // Pipes
 import { NoImagePipe } from './pipes/no-image.pipe';
+import { SafeDomPipe } from './pipes/safe-dom.pipe';
 
 @NgModule({
   declarations: [
@@ -25,9 +26,10 @@ import { NoImagePipe } from './pipes/no-image.pipe';
     SearchComponent,
     ArtistComponent,
     NavbarComponent,
-    NoImagePipe,
     CardComponent,
     LoadingComponent,
+    NoImagePipe,
+    SafeDomPipe,
   ],
   imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(ROUTES)],
   providers: [],
