@@ -18,6 +18,7 @@ import { ROUTES } from './app.routes';
 // Pipes
 import { NoImagePipe } from './pipes/no-image.pipe';
 import { SafeDomPipe } from './pipes/safe-dom.pipe';
+import { ErrorAlertComponent } from './components/shared/error-alert/error-alert.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { SafeDomPipe } from './pipes/safe-dom.pipe';
     LoadingComponent,
     NoImagePipe,
     SafeDomPipe,
+    ErrorAlertComponent,
   ],
   imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(ROUTES)],
   providers: [],

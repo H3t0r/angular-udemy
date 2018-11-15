@@ -10,9 +10,14 @@
     />
   </div>
 </div>
-<div class="row mt-5">
+<div class="row mt-5" *ngIf="hasError">
+  <div class="col"><app-error-alert [errorInfo]="errorInfo"></app-error-alert></div>
+</div>
+<div class="row mt-5" *ngIf="isLoading">
+  <div class="col"><app-loading></app-loading></div>
+</div>
+<div class="row mt-5" *ngIf="!isLoading">
   <div class="col">
-    <app-loading *ngIf="isLoading"></app-loading>
-    <div class="card-columns"><app-card *ngIf="!isLoading" [items]="artists"></app-card></div>
+    <div class="card-columns"><app-card [items]="artists"></app-card></div>
   </div>
 </div>

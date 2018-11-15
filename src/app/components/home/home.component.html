@@ -1,2 +1,4 @@
+<app-error-alert *ngIf="hasError" [errorInfo]="errorInfo"></app-error-alert>
+
 <app-loading *ngIf="isLoading"></app-loading>
 <div class="card-columns"><app-card *ngIf="!isLoading" [items]="newReleases"></app-card></div>
