@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NgStyleComponent } from './components/ng-style/ng-style.component';
 import { ScopedStylesComponent } from './components/scoped-styles/scoped-styles.component';
+import { NgClassComponent } from './components/ng-class/ng-class.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NgStyleComponent,
-    ScopedStylesComponent
+    ScopedStylesComponent,
+    NgClassComponent
   ],
   imports: [
     BrowserModule

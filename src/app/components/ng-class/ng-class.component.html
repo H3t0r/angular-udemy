@@ -1,0 +1,24 @@
+<div class="alert" role="alert" [ngClass]="alertClass">
+  <strong>Please!</strong> Click any of the below buttons to change my class.
+</div>
+<div class="btn-group mb-3">
+  <button type="button" class="btn btn-info" (click)="alertClass = 'alert-info'">Info</button>
+  <button type="button" class="btn btn-success" (click)="alertClass = 'alert-success'">
+    Success
+  </button>
+  <button type="button" class="btn btn-warning" (click)="alertClass = 'alert-warning'">
+    Warning
+  </button>
+  <button type="button" class="btn btn-danger" (click)="alertClass = 'alert-danger'">Danger</button>
+</div>
+<h3 [ngClass]="{ 'text-danger': asProperties.danger, 'text-info': !asProperties.danger }">
+  Hello World
+</h3>
+<button
+  type="button"
+  class="btn"
+  [ngClass]="{ 'btn-danger': asProperties.danger, 'btn-info': !asProperties.danger }"
+  (click)="asProperties.danger = !asProperties.danger"
+>
+  Change class
+</button>
