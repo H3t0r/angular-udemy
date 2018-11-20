@@ -24,7 +24,7 @@
 </button>
 <br /><br />
 <h3>Async</h3>
-<button type="button" class="btn btn-primary" (click)="executeAsync()" [disabled]="loading">
+<button type="button" class="btn btn-primary mb-3" (click)="executeAsync()" [disabled]="loading">
   <i class="fas mr-2" [ngClass]="{ 'fa-save': !loading, 'fa-sync fa-spin': loading }"></i>
   <span *ngIf="!loading">Save</span> <span *ngIf="loading">Saving</span>
 </button>
