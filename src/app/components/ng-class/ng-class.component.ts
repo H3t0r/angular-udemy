@@ -1,17 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-ng-class',
   templateUrl: './ng-class.component.html',
   styles: [],
 })
-export class NgClassComponent implements OnInit {
+export class NgClassComponent {
   alertClass = 'alert-danger';
   asProperties: Object = {
     danger: false,
   };
+  loading = false;
 
   constructor() {}
 
-  ngOnInit() {}
+  executeAsync() {
+    this.loading = true;
+    setTimeout(() => (this.loading = false), 3000);
+  }
 }
