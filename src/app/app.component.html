@@ -1,9 +1,26 @@
 <div class="container mt-5">
-  <h1>Demos <small>Angular</small></h1>
-  <hr />
-  <app-ng-style></app-ng-style>
-  <app-scoped-styles></app-scoped-styles>
-  <app-ng-class></app-ng-class>
-  <h3 appHighlight>Highlight this text using a directive. Default Color.</h3>
-  <h3 [appHighlight]="'teal'">Highlight this text using a directive. Define a color.</h3>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/misc']">Misc</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/parent']">Parent</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
 </div>

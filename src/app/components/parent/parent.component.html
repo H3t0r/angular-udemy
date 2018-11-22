@@ -1,0 +1,27 @@
+<div class="btn-group" role="group" aria-label="Basic example">
+  <button
+    type="button"
+    class="btn btn-secondary"
+    [routerLink]="['details']"
+    routerLinkActive="active"
+  >
+    Details
+  </button>
+  <button
+    type="button"
+    class="btn btn-secondary"
+    [routerLink]="['website']"
+    routerLinkActive="active"
+  >
+    Website
+  </button>
+  <button
+    type="button"
+    class="btn btn-secondary"
+    [routerLink]="['emails']"
+    routerLinkActive="active"
+  >
+    Emails
+  </button>
+</div>
+<router-outlet></router-outlet>
