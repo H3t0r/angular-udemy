@@ -9,10 +9,12 @@ import { ProtectedComponent } from './components/protected/protected.component';
 
 import { AppRouting } from './app.routing';
 
+import { AuthService } from './services/auth.service';
+
 @NgModule({
   declarations: [AppComponent, NavbarComponent, HomeComponent, AboutComponent, ProtectedComponent],
   imports: [BrowserModule, AppRouting],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
