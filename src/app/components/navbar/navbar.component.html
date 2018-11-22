@@ -1,5 +1,7 @@
 <div class="ui secondary pointing menu">
   <div class="header item">Auth App</div>
-  <a class="active item"> Home </a> <a class="item"> About </a> <a class="item"> Protected </a>
+  <a class="item" [routerLink]="['home']" routerLinkActive="active"> Home </a>
+  <a class="item" [routerLink]="['about']" routerLinkActive="active"> About </a>
+  <a class="item" [routerLink]="['protected']" routerLinkActive="active"> Protected </a>
   <div class="right menu"><a class="ui item"> Login </a></div>
 </div>
