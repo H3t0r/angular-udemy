@@ -2,7 +2,14 @@
   <div class="header item">Auth App</div>
   <a class="item" [routerLink]="['home']" routerLinkActive="active"> Home </a>
   <a class="item" [routerLink]="['about']" routerLinkActive="active"> About </a>
-  <a class="item" [routerLink]="['protected']" routerLinkActive="active"> Protected </a>
+  <a
+    class="item"
+    [routerLink]="['protected']"
+    routerLinkActive="active"
+    *ngIf="auth.isAuthenticated()"
+  >
+    Protected
+  </a>
   <div class="right item">
     <button class="ui secondary button" (click)="auth.login()" *ngIf="!auth.isAuthenticated()">
       Login
