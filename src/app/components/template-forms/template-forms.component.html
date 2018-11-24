@@ -1,3 +1,106 @@
-<p>
-  template-forms works!
-</p>
+<form
+  class="ui form"
+  novalidate=""
+  #templateForm="ngForm"
+  (ngSubmit)="onSubmit(templateForm)"
+  [ngClass]="{
+    error: templateForm.form.touched && (firstName.errors || lastName.errors || email.errors)
+  }"
+>
+  <h2 class="ui dividing header">Angular Template Forms</h2>
+  <div class="field" [ngClass]="{ error: firstName.touched && firstName.invalid }">
+    <label>First Name</label>
+    <input
+      type="text"
+      name="first-name"
+      placeholder="First Name"
+      minlength="3"
+      required
+      [(ngModel)]="user.first"
+      #firstName="ngModel"
+    />
+  </div>
+  <div class="field" [ngClass]="{ error: lastName.touched && lastName.invalid }">
+    <label>Last Name</label>
+    <input
+      type="text"
+      name="last-name"
+      placeholder="Last Name"
+      minlength="3"
+      required
+      [(ngModel)]="user.last"
+      #lastName="ngModel"
+    />
+  </div>
+  <div class="field" [ngClass]="{ error: email.touched && email.invalid }">
+    <label>E-mail</label>
+    <input
+      type="email"
+      name="e-mail"
+      placeholder="joe@schmoe.com"
+      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+      required
+      [(ngModel)]="user.email"
+      #email="ngModel"
+    />
+  </div>
+  <div class="field">
+    <label>Select a month</label>
+    <select class="ui fluid search dropdown" name="month" [(ngModel)]="user.month">
+      <option value="">Month</option>
+      <option *ngFor="let month of months" [value]="month.number">{{ month.string }}</option>
+    </select>
+  </div>
+  <div class="inline fields">
+    <label for="fruit">Select your sex:</label>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input
+          type="radio"
+          name="sex"
+          checked=""
+          tabindex="0"
+          class="hidden"
+          value="Male"
+          [(ngModel)]="user.sex"
+        />
+        <label>Male</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input
+          type="radio"
+          name="sex"
+          tabindex="0"
+          class="hidden"
+          value="Female"
+          [(ngModel)]="user.sex"
+        />
+        <label>Female</label>
+      </div>
+    </div>
+  </div>
+  <button
+    class="ui button"
+    type="submit"
+    [disabled]="templateForm.invalid"
+    [ngClass]="{ disabled: templateForm.invalid }"
+  >
+    Submit
+  </button>
+  <div
+    class="ui error message"
+    *ngIf="templateForm.form.touched && (firstName.errors || lastName.errors || email.errors)"
+  >
+    <div class="header">Errors found in the form.</div>
+    <ul class="list">
+      <li *ngIf="firstName.errors?.required">First name is required</li>
+      <li *ngIf="firstName.errors?.minlength">First name should have at least 5 characters</li>
+      <li *ngIf="lastName.errors?.required">Last name is required</li>
+      <li *ngIf="lastName.errors?.minlength">Last name should have at least 5 characters</li>
+      <li *ngIf="email.errors?.required">Email is required</li>
+      <li *ngIf="email.errors?.pattern">Email provided is not valid</li>
+    </ul>
+  </div>
+</form>
