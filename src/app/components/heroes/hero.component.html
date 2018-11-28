@@ -1,3 +1,36 @@
-<p>
-  hero works!
-</p>
+<div class="ui container">
+  <form class="ui form">
+    <div class="ui huge dividing header">Hero</div>
+    <div class="ui grid">
+      <div class="row">
+        <div class="eight wide column">
+          <div class="field">
+            <label>Name</label> <input type="text" name="first-name" placeholder="First Name" />
+          </div>
+          <div class="field">
+            <label>House</label>
+            <select class="ui dropdown">
+              <option value="">Select house</option>
+              <option value="marvel">Marvel</option>
+              <option value="dc">DC</option>
+            </select>
+          </div>
+        </div>
+        <div class="eight wide column">
+          <div class="field"><label>Bio</label> <textarea rows="5"></textarea></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="ui large buttons">
+            <a class="ui red labeled icon button" [routerLink]="['/heroes']"
+              ><i class="pause icon"></i>Back</a
+            >
+            <div class="or"></div>
+            <button class="ui blue right labeled icon button"><i class="save icon"></i>Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
