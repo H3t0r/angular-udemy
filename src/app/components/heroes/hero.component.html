@@ -1,15 +1,22 @@
-<div class="ui container">
-  <form class="ui form">
+<div class="ui container animated fadeIn">
+  <form class="ui form" (ngSubmit)="onSubmit()" #form="ngForm">
     <div class="ui huge dividing header">Hero</div>
     <div class="ui grid">
       <div class="row">
         <div class="eight wide column">
           <div class="field">
-            <label>Name</label> <input type="text" name="first-name" placeholder="First Name" />
+            <label>Name</label>
+            <input
+              type="text"
+              name="name"
+              placeholder="Hero Name"
+              required
+              [(ngModel)]="hero.name"
+            />
           </div>
           <div class="field">
             <label>House</label>
-            <select class="ui dropdown">
+            <select class="ui dropdown" name="house" [(ngModel)]="hero.house">
               <option value="">Select house</option>
               <option value="marvel">Marvel</option>
               <option value="dc">DC</option>
@@ -17,7 +24,9 @@
           </div>
         </div>
         <div class="eight wide column">
-          <div class="field"><label>Bio</label> <textarea rows="5"></textarea></div>
+          <div class="field">
+            <label>Bio</label> <textarea rows="5" name="bio" [(ngModel)]="hero.bio"></textarea>
+          </div>
         </div>
       </div>
       <div class="row">
@@ -27,7 +36,9 @@
               ><i class="pause icon"></i>Back</a
             >
             <div class="or"></div>
-            <button class="ui blue right labeled icon button"><i class="save icon"></i>Save</button>
+            <button class="ui blue right labeled icon button" [disabled]="form.invalid">
+              <i class="save icon"></i>Save
+            </button>
           </div>
         </div>
       </div>
