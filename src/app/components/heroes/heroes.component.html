@@ -1,3 +1,36 @@
-<p>
-  heroes works!
-</p>
+<div class="ui grid container">
+  <div class="row">
+    <div class="column">
+      <div class="ui dividing huge header">Heroes</div>
+      <div class="ui top attached menu">
+        <div class="right menu">
+          <a class="item" [routerLink]="['/hero', 'new']">Create Hero</a>
+        </div>
+      </div>
+      <table class="ui attached inverted table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>House</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John</td>
+            <td>Approved</td>
+            <td>None</td>
+            <td>None</td>
+          </tr>
+          <tr>
+            <td>Jamie</td>
+            <td>Approved</td>
+            <td>Requires call</td>
+            <td>Requires call</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
