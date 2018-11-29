@@ -33,10 +33,16 @@
         <div class="column">
           <div class="ui large buttons">
             <a class="ui red labeled icon button" [routerLink]="['/heroes']"
-              ><i class="pause icon"></i>Back</a
+              ><i class="arrow left icon"></i>Back</a
             >
             <div class="or"></div>
-            <button class="ui blue right labeled icon button" [disabled]="form.invalid">
+            <button type="button" class="ui green button" (click)="onNew(form)">New</button>
+            <div class="or"></div>
+            <button
+              type="submit"
+              class="ui blue right labeled icon button"
+              [disabled]="form.invalid"
+            >
               <i class="save icon"></i>Save
             </button>
           </div>
