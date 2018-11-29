@@ -10,24 +10,25 @@
       <table class="ui attached inverted table">
         <thead>
           <tr>
-            <th>#</th>
             <th>Name</th>
             <th>House</th>
-            <th>Actions</th>
+            <th class="right aligned">Actions</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>John</td>
-            <td>Approved</td>
-            <td>None</td>
-            <td>None</td>
-          </tr>
-          <tr>
-            <td>Jamie</td>
-            <td>Approved</td>
-            <td>Requires call</td>
-            <td>Requires call</td>
+          <tr *ngFor="let hero of (heroes | keyvalue)">
+            <td>{{ hero.value.name }}</td>
+            <td>{{ hero.value.house | uppercase }}</td>
+            <td class="right aligned">
+              <div class="ui buttons">
+                <a class="ui inverted icon button" [routerLink]="['/hero', hero.key]">
+                  <i class="edit icon"></i>
+                </a>
+                <button class="ui inverted icon button" (click)="onDelete(hero.key)">
+                  <i class="trash icon"></i>
+                </button>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>

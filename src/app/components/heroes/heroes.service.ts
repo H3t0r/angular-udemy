@@ -31,7 +31,18 @@ export class HeroesService {
 
   getHero(key$: string) {
     const endpoint = `${this.URL}/${key$}.json`;
-    const headers = new Headers({ 'Content-Type': 'application/json' });
+
+    return this.http.get(endpoint).pipe(map((res: any) => JSON.parse(res._body)));
+  }
+
+  deleteHero(key$: string) {
+    const endpoint = `${this.URL}/${key$}.json`;
+
+    return this.http.delete(endpoint).pipe(map((res: any) => JSON.parse(res._body)));
+  }
+
+  getHeroes() {
+    const endpoint = `${this.URL}.json`;
 
     return this.http.get(endpoint).pipe(map((res: any) => JSON.parse(res._body)));
   }
