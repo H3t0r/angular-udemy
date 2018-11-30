@@ -32,6 +32,15 @@
           </tr>
         </tbody>
       </table>
+      <div
+        class="ui bottom attached black inverted placeholder segment"
+        [ngClass]="{ loading: isLoading }"
+        *ngIf="isLoading || heroes === null || heroes === {}"
+      >
+        <div class="ui icon header" *ngIf="isLoading || heroes === null">
+          <i class="user secret icon"></i>Heroes not found!
+        </div>
+      </div>
     </div>
   </div>
 </div>

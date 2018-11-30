@@ -8,9 +8,13 @@ import { HeroesService } from './heroes.service';
 })
 export class HeroesComponent implements OnInit {
   heroes: any;
+  isLoading = true;
 
   constructor(private heroesAPI: HeroesService) {
-    this.heroesAPI.getHeroes().subscribe(heroes => (this.heroes = heroes));
+    this.heroesAPI.getHeroes().subscribe(heroes => {
+      this.heroes = heroes;
+      this.isLoading = false;
+    });
   }
 
   onDelete(id: string) {
